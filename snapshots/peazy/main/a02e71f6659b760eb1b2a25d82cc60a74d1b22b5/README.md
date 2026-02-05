@@ -1,0 +1,30 @@
+# Peazy Labs Landing Page Q1 2026
+
+This project is a React/Vite landing page deployed on Vercel.
+
+## Local Development
+
+To run this project locally:
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Kush52662/peazy-labs-landing-page-q1-2026.git
+    cd peazy-labs-landing-page-q1-2026
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## Deployment
+
+This project is deployed to Vercel.
+
+
+<!-- Test auto-sync Thu Feb  5 12:04:12 PST 2026 -->

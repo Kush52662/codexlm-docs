@@ -4,4 +4,13 @@ const withNextra = nextra({
 })
 
 export default withNextra({
+  async redirects() {
+    return [
+      {
+        source: '/peazy',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 })

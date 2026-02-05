@@ -1,0 +1,18 @@
+
+> codexlm-docs@1.0.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.2.40.101:3000
+- Environments: .env.local
+- Experiments (use with caution):
+  · optimizePackageImports
+
+✓ Starting...
+✓ Ready in 1785ms
+○ Compiling / ...
+ GET / 200 in 9.8s (compile: 9.3s, render: 504ms)
+ GET /api/rag/projects 200 in 171ms (compile: 146ms, render: 26ms)
+ POST /api/rag/ask 500 in 801ms (compile: 106ms, render: 695ms)
+[?25h

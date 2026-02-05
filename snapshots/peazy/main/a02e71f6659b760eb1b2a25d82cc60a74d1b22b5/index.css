@@ -1,0 +1,303 @@
+body {
+    background-color: #F9F8F6;
+    color: #1A1A1A;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.animate-infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in-section.is-visible .stagger-fade-in > .stagger-child {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.stagger-child {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #0A192F; }
+}
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(60, end), blink-caret .75s step-end infinite;
+  border-right: .15em solid #0A192F;
+  width: 100%;
+  max-width: 100%;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0px 0px rgba(10, 25, 47, 0); }
+  50% { box-shadow: 0 0 0px 4px rgba(10, 25, 47, 0.1); }
+}
+.animate-pulse-glow {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes hero-cursor-move {
+    0%, 100% { transform: translate(250px, 150px) scale(1); opacity: 0; }
+    10% { transform: translate(250px, 150px) scale(1); opacity: 1; } /* appear near panel */
+    40% { transform: translate(120px, 120px) scale(1); opacity: 1; } /* move to target */
+    50% { transform: translate(120px, 120px) scale(0.9); opacity: 1; } /* click down */
+    55% { transform: translate(120px, 120px) scale(1); opacity: 1; }  /* click up */
+    80% { transform: translate(250px, 150px) scale(1); opacity: 1; } /* move back */
+    90% { transform: translate(250px, 150px) scale(1); opacity: 0; } /* disappear */
+}
+.animate-hero-cursor-move {
+    animation: hero-cursor-move 6s ease-in-out infinite;
+}
+
+@keyframes audio-wave {
+  0%, 100% { transform: scaleY(0.2); opacity: 0.5; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+.animate-audio-wave {
+    animation: audio-wave 1.5s ease-in-out infinite;
+}
+
+@keyframes ping-glow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 5px 2px rgba(239, 68, 68, 0.4);
+  }
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+    box-shadow: 0 0 10px 4px rgba(239, 68, 68, 0);
+  }
+}
+.animate-ping-glow {
+    position: relative;
+    border-radius: 9999px;
+    animation: ping-glow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes screen-glow {
+  0%, 100% { filter: drop-shadow(0 0 1px rgba(10,25,47,0.1)); }
+  50% { filter: drop-shadow(0 0 4px rgba(10,25,47,0.2)); }
+}
+.animate-screen-glow {
+  animation: screen-glow 2s ease-in-out infinite;
+}
+
+@keyframes sound-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-sound-pulse {
+  animation: sound-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes bolt-flash {
+  0%, 100% { 
+    transform: scale(1);
+    filter: drop-shadow(0 0 1px rgba(10,25,47,0.2));
+  }
+  50% { 
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 3px rgba(10,25,47,0.4));
+  }
+}
+.animate-bolt-flash {
+  animation: bolt-flash 0.8s ease-in-out infinite;
+}
+
+/* Hero mouse-reactive glow - made subtle for light theme */
+.hero-bg-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+        40vw circle at var(--mouse-x) var(--mouse-y),
+        rgba(10, 25, 47, 0.03),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.hero-bg-glow:hover::before {
+    opacity: 1;
+}
+
+/* Testimonial icon bounce-in */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in-on-visible {
+    opacity: 0;
+    transform: scale(0.3);
+}
+.is-visible .animate-bounce-in-on-visible {
+    animation: bounce-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Ripple Animation */
+@keyframes ripple-ring {
+  0% { transform: scale(0); opacity: 0.5; border-width: 2px; }
+  100% { transform: scale(4); opacity: 0; border-width: 0px; }
+}
+.animate-ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(10,25,47,0.4);
+    top: 0; left: 0;
+    margin-left: -10px; margin-top: -10px; /* Center */
+    animation: ripple-ring 2.5s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Square Fade Animation */
+@keyframes square-fade {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.animate-square-fade {
+    animation: square-fade 4s ease-in-out forwards;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            ENTERPRISE ANIMATIONS                           */
+/* -------------------------------------------------------------------------- */
+
+/* 1. Precise Entrance - Smooth, slight delay, zero bounce */
+@keyframes ent-fade-slide-up {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.animate-ent-slide-up {
+    animation: ent-fade-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. AI Instructor Navigation Loop - Professional Pathing */
+@keyframes ent-cursor-loop {
+    /* SPAWN OUTSIDE (Left) */
+    0% { transform: translate(-100px, 300px); opacity: 0; }
+    5% { transform: translate(-50px, 250px); opacity: 1; }
+    
+    /* TRAVEL TO HEADLINE */
+    12% { transform: translate(300px, 120px); }
+    /* DWELL AT HEADLINE */
+    20% { transform: translate(310px, 125px); } 
+    
+    /* TRAVEL TO MEDIA CARD */
+    30% { transform: translate(500px, 420px); }
+    /* ACTION AT MEDIA CARD (Click) */
+    35% { transform: translate(500px, 420px) scale(0.9); }
+    38% { transform: translate(500px, 420px) scale(1); }
+    
+    /* TRAVEL TO TOP NAV */
+    50% { transform: translate(250px, 40px); }
+    /* DWELL AT TOP NAV */
+    55% { transform: translate(260px, 45px); }
+    
+    /* TRAVEL TO PUBLISH BUTTON */
+    68% { transform: translate(720px, 40px); }
+    /* DWELL AT PUBLISH */
+    75% { transform: translate(720px, 40px); }
+    
+    /* EXIT SCREEN (Right) */
+    85% { transform: translate(950px, 100px); opacity: 1; }
+    95% { transform: translate(1100px, 150px); opacity: 0; }
+    100% { transform: translate(-100px, 300px); opacity: 0; }
+}
+.animate-cursor-loop {
+    animation: ent-cursor-loop 25s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes ent-cursor-drift-2 {
+    0% { transform: translate(0, 0); }
+    30% { transform: translate(-12px, 10px); }
+    60% { transform: translate(-5px, -5px); }
+    90% { transform: translate(-15px, 5px); }
+    100% { transform: translate(0, 0); }
+}
+.animate-ent-cursor-2 {
+    animation: ent-cursor-drift-2 14s ease-in-out infinite reverse;
+}
+
+/* 3. Subtle Hover/Float for Cards - Barely perceptible */
+@keyframes ent-float-micro {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+.animate-ent-float {
+    animation: ent-float-micro 6s ease-in-out infinite;
+}
+
+/* 4. Soft Pulse for Status Indicators */
+@keyframes ent-pulse-soft {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+.animate-ent-pulse {
+    animation: ent-pulse-soft 3s ease-in-out infinite;
+}
+
+@keyframes cursor-path {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { transform: translate(50px, 100px); opacity: 1; } /* Upload hover */
+    30% { transform: translate(50px, 100px) scale(0.9); } /* Click */
+    40% { transform: translate(50px, 100px) scale(1); } 
+    60% { transform: translate(-20px, 200px); } /* Button hover */
+    80% { transform: translate(-20px, 200px) scale(0.9); } /* Click */
+    90% { transform: translate(-20px, 200px) scale(1); opacity: 1; }
+    100% { opacity: 0; }
+}
+.animate-cursor-path {
+    animation: cursor-path 5s ease-in-out infinite;
+}

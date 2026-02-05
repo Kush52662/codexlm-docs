@@ -1,0 +1,19 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Laptop Main Body/Lid -->
+  <rect x="100" y="40" width="800" height="520" rx="20" fill="#2D3135" stroke="#1A1C1E" stroke-width="2"/>
+  
+  <!-- Screen Glass Area -->
+  <rect x="120" y="60" width="760" height="480" rx="8" fill="#000000"/>
+  
+  <!-- Inner Active Display Area (This is what we will overlay) -->
+  <rect x="140" y="80" width="720" height="440" rx="4" fill="#171717"/>
+  
+  <!-- Bottom Case/Base (Simplified for cleaner look) -->
+  <rect x="50" y="560" width="900" height="12" rx="6" fill="#D1D5DB" />
+  
+  <!-- Hinge Detail -->
+  <rect x="440" y="560" width="120" height="8" rx="2" fill="#9CA3AF"/>
+  
+  <!-- Webcam -->
+  <circle cx="500" cy="52" r="3" fill="#1F2937"/>
+</svg>
