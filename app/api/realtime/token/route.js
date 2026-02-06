@@ -5,7 +5,7 @@ export async function POST() {
   try {
     const apiKey = getOpenAIKeyOrThrow();
     const model = getServerEnv('OPENAI_REALTIME_MODEL', {
-      defaultValue: 'gpt-realtime',
+      defaultValue: 'gpt-4o-realtime-preview-2024-12-17',
       preferDotEnvLocalInDevelopment: true
     });
 

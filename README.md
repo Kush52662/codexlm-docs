@@ -1,4 +1,36 @@
-# CodexLM Documentation
+# CodexLM
+
+**CodexLM is the GPS for your codebase and a NotebookLM-style realtime chat workspace for software projects.** It helps developers understand code quickly while Codex is building features in parallel.
+
+## The Core Problem
+
+In fast workflows, repository context becomes stale across chats, branches, and worktrees. Developers lose time validating what changed and where to look. CodexLM solves this with a living, branch-aware docs layer plus source-grounded realtime conversation.
+
+## The Solution
+
+Like NotebookLM, CodexLM is designed for understanding through grounded dialogue. But instead of general documents, it is **specialized for codebases**. 
+
+You can ask questions in realtime, and CodexLM answers with evidence from current project sources, then navigates to the exact docs or file context being discussed. Every answer is tied to freshness metadata (branch, commit, indexed time) so users know whether context is current.
+
+## MVP Features
+
+Our MVP includes:
+
+- **CodeWiki-style Docs Viewer**: Left navigation, center content, right chat.
+- **Realtime NotebookLM-like Chat**: For repository understanding.
+- **Source Citations**: With stale-context warnings.
+- **Read-only Code Verification**: Routes for file/line checks.
+- **Fast Visual Understanding**: Artifacts like mindmaps and infographics.
+
+## Philosophy
+
+**CodexLM is intentionally not a coding agent.** 
+
+Codex writes code; CodexLM ensures humans stay oriented and confident in what that code means. This creates a strong Codex companion workflow: while generation runs, teams use CodexLM to understand architecture, validate assumptions, and prepare review/test focus. The outcome is faster onboarding, safer decisions, and higher-quality implementation cycles.
+
+---
+
+# Technical Documentation
 
 This is the documentation for CodexLM, built with [Nextra](https://nextra.site).
 

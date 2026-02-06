@@ -131,7 +131,7 @@ export default function ShadcnChatbotPanel({
               return;
             }
 
-            if (payload.type === 'response.text.delta') {
+            if (payload.type === 'response.text.delta' || payload.type === 'response.audio_transcript.delta' || payload.type === 'response.output_text.delta' || payload.type === 'response.output_audio_transcript.delta') {
               const delta = payload.delta || '';
               const activeId = activeAssistantMessageIdRef.current;
               if (!activeId) return;
